@@ -1,0 +1,30 @@
+{
+  "name": "lancyy-ai-content-moderation",
+  "version": "1.0.0",
+  "description": "AI Content Moderation System - Full Stack Application",
+  "homepage": "https://ai-content-moderation-lancyy.onrender.com",
+  "author": "Lance Cabanit (Lancyy)",
+  "license": "MIT",
+  "scripts": {
+    "start": "cd backend && npm install && npm start",
+    "build": "cd frontend && npm install && npm run build && cd ../backend && npm install",
+    "dev:fullstack": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm start",
+    "start:fullstack": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm run build && serve -s frontend/build -l 3001",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "build:all": "cd backend && npm run build && cd ../frontend && npm run build",
+    "build:production": "npm install && cd backend && npm install && cd ../frontend && npm install && npm run build",
+    "test:all": "cd backend && npm test && cd ../frontend && npm test"
+  },
+  "dependencies": {
+    "axios": "^1.12.1",
+    "form-data": "^4.0.4"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "serve": "^14.2.1"
+  }
+}
